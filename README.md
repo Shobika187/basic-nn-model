@@ -131,4 +131,4 @@ ai_brain.predict(X_n1)
 
 ## RESULT
 
-Thus a Neural network for Regression model is Implemented
+Thus a basic neural network regression model for the given dataset is written and executed successfully.
