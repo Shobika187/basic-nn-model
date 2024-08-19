@@ -48,6 +48,7 @@ Evaluate the model with the testing data.
 
 ### Importing Required packages
 ```
+```
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
@@ -100,7 +101,7 @@ X_n1=Scaler.transform(X_n1)
 ai_brain.predict(X_n1)
 
 
-
+```
 
 
 ## OUTPUT
