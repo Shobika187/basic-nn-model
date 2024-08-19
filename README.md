@@ -47,7 +47,7 @@ Evaluate the model with the testing data.
 ### Register Number: 212221230096
 
 ### Importing Required packages
-```
+
 ```
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -59,6 +59,7 @@ import gspread
 from google.auth import default
 ```
 ### Authenticate the Google sheet
+```
 auth.authenticate_user()
 creds, _ = default()
 gc = gspread.authorize(creds)
@@ -71,15 +72,17 @@ dataset1=dataset1.astype({'Output':float})
 dataset1.head()
 X=dataset1[['Input']].values
 y=dataset1[['Output']].values
-
+```
 ### Split the testing and training data
+```
 X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=0.33,random_state=33)
 Scaler=MinMaxScaler()
 Scaler.fit(X_train)
 X_train1=Scaler.transform(X_train)
 
-
+```
 ### Build the Deep learning Model
+```
 ai_brain=Sequential([
      Dense(units=8,activation='relu'),
      Dense(units=10,activation='relu'),
@@ -91,7 +94,9 @@ ai_brain.fit(X_train1,y_train,epochs=2000)
 
 loss_df = pd.DataFrame(ai_brain.history.history)
 loss_df.plot()
+```
 ### Evaluate the Model
+```
 loss_df=pd.DataFrame(ai_brain.history.history)
 loss_df.plot()
 X_test1=Scaler.transform(X_test)
@@ -100,8 +105,8 @@ X_n1=[[4]]
 X_n1=Scaler.transform(X_n1)
 ai_brain.predict(X_n1)
 
-
 ```
+
 
 
 ## OUTPUT
